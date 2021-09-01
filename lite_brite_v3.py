@@ -9,6 +9,10 @@ from random import choice
 
 
 def initialization():
+    # providing 3.3v power
+    Vdd = digitalio.DigitalInOut(board.D15)
+    Vdd.direction = digitalio.Direction.OUTPUT
+    Vdd.value = 1
     # The led data is sent from the pin 12 (GPIO 18)
     pixel_pin = board.D18
     # Each led modules has 4 leds
